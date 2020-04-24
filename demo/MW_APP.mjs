@@ -18,13 +18,26 @@ class App extends MC{
     })
 
     beforeRender = () => {
-        this.state.count++;
-        console.log(this.state);
+        // this.state.count++;
+        this.setState({
+            count:2
+        },()=>{
+            this.setState({
+                count:4
+            },state=>console.log(state,'试试啊'))
+        })
+        this.setState({
+            count:3
+        },console.log)
+       
     }
     
     afterRender = () => {
-        this.state.count ++ 
-        console.log(this.state);
+        // this.state.count ++ 
+        // this.setState({
+        //     count:8
+        // })
+        // console.log(this.state,'after');
     }
 }
 

@@ -7,6 +7,7 @@ class MW {
     }
     el=null 
 
+
     VdomToDom = (vDom) => {
         //根据vDom类型创建dom
         const {type,props,children} = vDom;
@@ -37,6 +38,9 @@ class MW {
     mount = (mc,el) => {
         setTimeout(()=>{
             this.el = el;
+            if(!mc.MW_ResUI){
+                return ;
+            }
             const childNode = this.VdomToDom(mc.MW_ResUI)
             this.el.appendChild(childNode);
         })
@@ -44,7 +48,6 @@ class MW {
     ceateElement = (type,props,children) => {
         return new VDom(type,props,children);
     }
-
 
 
 }

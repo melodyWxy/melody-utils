@@ -8,7 +8,6 @@ export function deepCloneObj(obj,resObj){
         throw new Error('参数类型仅支持对象');
     }
 
-
     for(let i in obj){
         const itemType = typeof obj[i];
         if(itemType!=='object'){
