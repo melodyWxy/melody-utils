@@ -1,6 +1,6 @@
-export function expectOneType(prop,expectType){
+export function expectOneType(prop,expectType,fnName){
     if(typeof prop !== expectType){
-        throw new Error(`in CreateUpdate：Expecting an ${expectType} parameter，but get ${typeof prop}.`)
+        throw new Error(`in ${fnName?fnName:'MWjs'}: Expecting an ${expectType} parameter，but get ${typeof prop}.`)
     }
     return prop;
 }

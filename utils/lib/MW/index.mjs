@@ -45,8 +45,8 @@ class MW {
             this.el.appendChild(childNode);
         })
     }
-    ceateElement = (type,props,children) => {
-        return new VDom(type,props,children);
+    createElement = ({type,props,children,key}) => {
+        return new VDom(type,props,children,key);
     }
 
 
