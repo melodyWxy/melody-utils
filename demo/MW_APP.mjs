@@ -11,33 +11,25 @@ class App extends MC{
         }
     }
 
-    render = ()=> MW.ceateElement('div',{
-        // value:'嘻嘻',
-        innerText:this.state.count,
-        className:'box'  
+    render = ()=> MW.createElement({
+        type:'div',
+        props:{
+            innerText:this.state.count,
+            className:'box'  
+        },
+        key:'key1'
     })
 
-    beforeRender = () => {
+    beforeMount = () => {
         // this.state.count++;
         this.setState({
             count:2
-        },()=>{
-            this.setState({
-                count:4
-            },state=>console.log(state,'试试啊'))
         })
-        this.setState({
-            count:3
-        },console.log)
        
     }
     
-    afterRender = () => {
-        // this.state.count ++ 
-        // this.setState({
-        //     count:8
-        // })
-        // console.log(this.state,'after');
+    afterMount = function(){
+        console.log(this,'ar');
     }
 }
 
