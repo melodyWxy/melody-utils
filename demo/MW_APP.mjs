@@ -15,7 +15,7 @@ class App extends MC{
         type:'div',
         props:{
             innerText:this.state.count,
-            className:'box'  
+            className:'box'
         },
         key:'key1'
     })

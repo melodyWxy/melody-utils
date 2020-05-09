@@ -6,14 +6,12 @@ class MW {
     constructor(){
     }
     el=null 
-
-
     VdomToDom = (vDom) => {
         //根据vDom类型创建dom
-        const {type,props,children} = vDom;
+        const {type,props = {}} = vDom;
+        const {children } = props;
         const el = document.createElement(type);
-
-        //遍历props对象，给创建的el设置属性
+        //遍历props对象，给创建的el设置属性s
         for(let i in props){
             setAttr(el,i,props[i]);
         }
@@ -30,7 +28,6 @@ class MW {
             //添加进父节点
             el.appendChild(child);
         })
-
         //返回dom对象; 
         return el;    
     }
@@ -45,11 +42,9 @@ class MW {
             this.el.appendChild(childNode);
         })
     }
-    createElement = ({type,props,children,key}) => {
-        return new VDom(type,props,children,key);
+    ceateElement = (type,props,children) => {
+        return new VDom(type,props,children);
     }
-
-
 }
 
 
